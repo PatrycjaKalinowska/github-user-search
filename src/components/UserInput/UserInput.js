@@ -1,21 +1,10 @@
-import { useState } from 'react';
 import './UserInput.css';
 
-const UserInput = () => {
-    const [input, setInput] = useState("");
-
-    const handleChange = (e) => {
-        setInput(e.target.value);
-    }
-
-    const handleClick = (e) => {
-        e.preventDefault();
-        console.log(input);
-    }
-
+const UserInput = ( { input, inputChangeHandler, searchHandler } ) => {
+    
     return <form className="form">
-        <input className= "form__input" type="text" name="user" placeholder="Enter GitHub user name" onChange={handleChange} />
-        <button className='btn form__btn' onClick={handleClick}>Search</button>
+        <input className= "form__input" type="text" name="user" placeholder="Enter GitHub user name" onChange={inputChangeHandler} />
+        <button className='btn form__btn' onClick={searchHandler}>Search</button>
     </form>
 }
 
