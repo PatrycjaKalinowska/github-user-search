@@ -4,6 +4,10 @@ import './RepoCard.css';
 const RepoCard = ({ item }) => {
     const [displayDetails, setDisplayDetails] = useState(false);
 
+    useEffect(() => {
+        setDisplayDetails(false);
+    }, [ , item]);
+
     const handleClick = (e) => {
         setDisplayDetails(!displayDetails);   
     }
@@ -12,16 +16,16 @@ const RepoCard = ({ item }) => {
         <li>
             <div className='repo-card__basic-info-container'>
                 <div className='repo-card__basic-info-text'>
-                    <p>Repo name: {item.name}</p>
-                    <p>Description: {item.description}</p>
+                    <p><span>Repo name:</span> {item.name}</p>
+                    <p><span>Description:</span> {item.description}</p>
                 </div>
                 <button className='btn repo-card__btn' onClick={handleClick}>Details</button>
             </div>
             {displayDetails ? <div className='repo-card__details'>
-                <a href={item.html_url}>Go to repo</a>
-                <p>Stars: {item.stargazers_count}</p>
-                <p>Watchers: {item.watchers_count}</p>
-                <p>Forks: {item.forks}</p>
+                <a href={item.html_url}>{item.html_url}</a>
+                <p><span>Stars:</span> {item.stargazers_count}</p>
+                <p><span>Watchers:</span> {item.watchers_count}</p>
+                <p><span>Forks:</span> {item.forks}</p>
             </div> : ""}
         </li>
     </div>

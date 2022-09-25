@@ -27,13 +27,30 @@
 }
 
 .repo-card__basic-info-text p {
-    word-wrap: break-word;
+    word-break: break-all;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.repo-card__basic-info-text span {
+    font-weight: 700;
+    font-style: normal;
+    
 }
 
 .repo-card__details {
     margin-top: 10px;
     padding-top: 10px;
     border-top: 1px solid var(--accent-color);
+}
+
+.repo-card__details p {
+    margin-top: 10px;
+}
+
+.repo-card__details a {
+    word-break: break-all;
+    
 }
 
 @media screen and (max-width: 550px) {
