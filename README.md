@@ -1,6 +1,7 @@
 # GitHub User Search App
 This app is written in React. The app displays a list of repositories of a certain GitHub profile prompted by user.
 Additionally it shows short details of a profile (like user name, login, link to profile) and details of repositories (name, description, link to repo, number of stars, watchers and forks).
+Data fetched from GitHub REST API (https://developer.github.com/v3/).
 
 Project was set up using create-react-app (https://github.com/facebook/create-react-app).
 
