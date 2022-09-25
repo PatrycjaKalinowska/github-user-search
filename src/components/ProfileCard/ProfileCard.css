@@ -42,6 +42,10 @@
 @media screen and (max-width: 550px) {
     .profile-card__container {
         max-width: 400px;
+        padding: 20px 10px;
+    }
+    .profile-card__avatar {
+        margin-left: 10px;
     }
 }
 
@@ -54,6 +58,10 @@
     }
     .profile-card__avatar {
         margin-bottom: 10px;
+    }
+    .profile-card__details-container {
+        margin-left: 0;
+        margin-top: 30px;
     }
 }
 
