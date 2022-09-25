@@ -24,14 +24,33 @@ const App = () => {
   const handleSearchClick = (e) => {
     e.preventDefault();
     fetch(`https://api.github.com/users/${input}`)
-      .then(res => res.json())
-      .then(data => setUserData(data));
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          setUserData([]);
+          throw Error('could not fetch the data');
+        }
+      } )
+      .then(data => setUserData(data))
+      .catch( err => {
+        console.log(err);
+    });
 
     fetch(`https://api.github.com/users/${input}/repos?per_page=100`)
-      .then(res => res.json())
+      .then(res => {
+        if (res.ok) {
+        return res.json();
+      } else {
+        setReposList([]);
+        throw Error('could not fetch the data');
+      }})
       .then(data => {
         setReposList(data);
-      });
+      })
+      .catch( err => {
+        console.log(err);
+    });
 
     console.log(input);
     console.log(reposList);
