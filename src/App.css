@@ -27,8 +27,23 @@
   justify-content: flex-start;
   align-items: center;
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .app__header {
   margin-bottom: 30px;
+}
+
+.app__repos-list {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+a:hover {
+  color: var(--accent-color-light);
+  text-shadow: 0 0 10px var(--accent-color-light);
 }

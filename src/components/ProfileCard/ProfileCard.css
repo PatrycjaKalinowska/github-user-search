@@ -1,10 +1,15 @@
 .profile-card__container {
     border-radius: 5px;
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--accent-color-light);
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 500px;
+    min-height: 200px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 5px var(--accent-color-light),
+    0 0 5px var(--accent-color-light) inset;
 }
 
 .profile-card__avatar {

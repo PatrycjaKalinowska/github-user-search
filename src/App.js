@@ -2,16 +2,23 @@ import './App.css';
 import { useState } from 'react';
 import UserInput from './components/UserInput/UserInput';
 import ProfileCard from './components/ProfileCard/ProfieCard';
+import RepoCard from './components/RepoCard/RepoCard';
 
 const App = () => {
   const [input, setInput] = useState("");
   const [userName, setUserName] = useState(null);
   const [userLogin, setUserLogin] = useState(null);
   const [userAvatar, setUserAvatar] = useState(null);
+  const [profileURL, setProfileURL] = useState(null);
   const [repos, setRepos] = useState(null);
+  const [reposList, setReposList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
+
   }
 
   const handleSearchClick = (e) => {
@@ -19,6 +26,15 @@ const App = () => {
     fetch(`https://api.github.com/users/${input}`)
       .then(res => res.json())
       .then(data => setUserData(data));
+
+    fetch(`https://api.github.com/users/${input}/repos?per_page=100`)
+      .then(res => res.json())
+      .then(data => {
+        setReposList(data);
+      });
+
+    console.log(input);
+    console.log(reposList);
   }
 
   const setUserData = (data) => {
@@ -26,12 +42,20 @@ const App = () => {
     setUserLogin(data.login);
     setUserAvatar(data.avatar_url);
     setRepos(data.public_repos);
+    setProfileURL(data.html_url);
   }
+
 
   return <div className='app__container'>
     <h1 className='app__header'>GitHub User Search</h1>
     <UserInput input={input} inputChangeHandler={handleInputChange} searchHandler={handleSearchClick} />
-    {userName ? <ProfileCard userName={userName} userLogin={userLogin} userAvatar={userAvatar} repos={repos} /> : <p>Profile not found</p>}
+    {userName ? <ProfileCard userName={userName} userLogin={userLogin} userAvatar={userAvatar} repos={repos} profileURL={profileURL}/> : <p>Profile not found</p>}
+    {reposList.length === 0 ? <p></p> : <ul className='app__repos-list'>
+      {reposList ? reposList.map((item, index) => <RepoCard key={index} item={item}></RepoCard>) : <li>Repos not found</li>}
+    </ul>
+
+
+    }
   </div>
 }
 

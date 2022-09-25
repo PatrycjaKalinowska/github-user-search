@@ -4,7 +4,7 @@
 
 .form__input {
     margin-right: 20px;
-    padding: 7px;
+    padding: 10px;
     border-radius: 5px;
     border: 0;
 }
@@ -16,6 +16,10 @@
     background-color: var(--accent-color);
     color: var(--text-primary-color);
     cursor: pointer;
+}
+
+.form__btn {
+    padding: 10px 13px;
 }
 
 .btn:hover {
