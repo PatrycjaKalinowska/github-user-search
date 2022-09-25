@@ -34,8 +34,21 @@
   margin-bottom: 30px;
 }
 
+.app__repos-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
 .app__repos-list {
   list-style: none;
+}
+
+.app__repos-list-header {
+  font-size: 25px;
+  font-weight: 700;
 }
 
 a {
@@ -46,6 +59,10 @@ a {
 a:hover {
   color: var(--accent-color-light);
   text-shadow: 0 0 10px var(--accent-color-light);
+}
+
+.app__repos-list-btn {
+  margin: 20px 0;
 }
 
 @media screen and (max-width: 350px) {
