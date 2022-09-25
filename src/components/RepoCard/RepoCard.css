@@ -22,6 +22,7 @@
 
 .repo-card__basic-info-text {
     align-self: flex-start;
+    margin-right: 10px;
 }
 
 .repo-card__details {
@@ -41,7 +42,7 @@
         width: 80vw;
     }
     .repo-card__basic-info-text {
-        margin-right: 10px;
+        margin-right: 0;
         margin-bottom: 15px;
     }
     .repo-card__basic-info-container {
