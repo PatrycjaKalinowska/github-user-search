@@ -20,9 +20,36 @@
     margin-bottom: 5px;
 }
 
+.repo-card__basic-info-text {
+    align-self: flex-start;
+}
+
 .repo-card__details {
     margin-top: 10px;
     padding-top: 10px;
     border-top: 1px solid var(--accent-color);
 }
 
+@media screen and (max-width: 550px) {
+    .repo-card__container {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .repo-card__container {
+        width: 80vw;
+    }
+    .repo-card__basic-info-text {
+        margin-right: 10px;
+        margin-bottom: 15px;
+    }
+    .repo-card__basic-info-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    
+}

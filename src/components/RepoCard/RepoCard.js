@@ -6,7 +6,6 @@ const RepoCard = ({ item }) => {
 
     const handleClick = (e) => {
         setDisplayDetails(!displayDetails);   
-             
     }
 
     return <div className="repo-card__container">
@@ -19,7 +18,7 @@ const RepoCard = ({ item }) => {
                 <button className='btn repo-card__btn' onClick={handleClick}>Details</button>
             </div>
             {displayDetails ? <div className='repo-card__details'>
-                <p>Link to repo: <a href={item.html_url}>{item.html_url}</a></p>
+                <a href={item.html_url}>Go to repo</a>
                 <p>Stars: {item.stargazers_count}</p>
                 <p>Watchers: {item.watchers_count}</p>
                 <p>Forks: {item.forks}</p>

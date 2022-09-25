@@ -5,13 +5,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 500px;
+    width: 500px;
     min-height: 200px;
     margin-bottom: 30px;
     box-shadow: 0 0 5px var(--accent-color-light),
     0 0 5px var(--accent-color-light) inset;
 }
 
+.profile-card__details-container p {
+    margin-bottom: 10px;
+}
 .profile-card__avatar {
     width: 100px;
     height: auto;
@@ -20,3 +23,26 @@
 .profile-card__details-container {
     margin-left: 20px;
 }
+
+.profile-card__link {
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 550px) {
+    .profile-card__container {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .profile-card__container {
+        flex-direction: column;
+        justify-content: center;
+        width: 80vw;
+
+    }
+    .profile-card__avatar {
+        margin-bottom: 10px;
+    }
+}
+

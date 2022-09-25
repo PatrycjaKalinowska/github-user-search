@@ -51,9 +51,6 @@ const App = () => {
       .catch( err => {
         console.log(err);
     });
-
-    console.log(input);
-    console.log(reposList);
   }
 
   const setUserData = (data) => {

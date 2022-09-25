@@ -47,3 +47,9 @@ a:hover {
   color: var(--accent-color-light);
   text-shadow: 0 0 10px var(--accent-color-light);
 }
+
+@media screen and (max-width: 350px) {
+  .app__header {
+    font-size: 25px;
+  }
+}

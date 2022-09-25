@@ -8,7 +8,7 @@ const ProfileCard = ({ userName, userLogin, userAvatar, repos, profileURL }) => 
             <p className='profile-card__details'>User name: {userName}</p>
             <p className='profile-card__details'>Login: {userLogin}</p>
             <p className='profile-card__details'>Repositories: {repos}</p>
-            <p>Link to profile: <a href={profileURL}>{profileURL}</a></p>
+            <a className="profile-card__link" href={profileURL}>Go to profile</a>
         </div>
     </div>
 }
